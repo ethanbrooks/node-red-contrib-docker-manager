@@ -1,0 +1,24 @@
+<dx-data-grid
+    id="orders"
+    [dataSource]="eventsDataSource"
+    [repaintChangesOnly]="true"
+    [columnAutoWidth]="true"
+    [showBorders]="true">
+
+    <dxo-paging [pageSize]="20"></dxo-paging>
+
+    <dxi-column dataField="Actor.Attributes.name" dataType="string"></dxi-column>
+    <dxo-master-detail [enabled]="true" template="actorDetail"> </dxo-master-detail>
+
+    <div *dxTemplate="let detail of 'actorDetail'">
+    fda
+    </div>
+    <dxi-column dataField="Type" dataType="string"></dxi-column>
+    <dxi-column dataField="Action" dataType="string"></dxi-column>
+    <dxi-column dataField="scope" dataType="string"></dxi-column>
+    <dxi-column dataField="time" dataType="date" format='longDateLongTime' [allowSorting]="true"></dxi-column>
+    <!--// 
+        Yields NaN
+    <dxi-column dataField="timenano" dataType="date" format='millisecond' [allowSorting]="true"></dxi-column>
+    //-->
+</dx-data-grid>
